@@ -1,0 +1,22 @@
+<div class="box">
+  <div *ngIf="!loadding" class="row d-flex align-items-center">
+    <div class="col-md-5 col-sm-12">
+      <img src="{{productdet.image}}" alt="sas">
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <div class="info">
+        <div class="list-unstyled">
+          <li><strong>title:</strong>{{productdet.title}}</li>
+          <li><strong>category:</strong>{{productdet.category}}</li>
+          <li><strong>description:</strong>{{productdet.description}}</li>
+          <li><strong>rate:</strong>{{productdet.rate}}</li>
+          <li><strong>count:</strong>{{productdet.count}}</li>
+          <li><strong>price:</strong>{{productdet.price}}</li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <app-spinner *ngIf="loadding"></app-spinner>
+  </div>
+</div>

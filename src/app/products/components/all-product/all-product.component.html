@@ -1,0 +1,25 @@
+<div class="box mt-5">
+  <div class="my-2 w-25">
+    <app-select [data]="categories" [title]="'Categories'" (selectedvalue)="getfiltercategory($event)"></app-select>
+  </div>
+  <div class="row" *ngIf="!loadding">
+    <div class="col-md-3 col-sm-6" *ngFor="let item of products|keyvalue">
+      <app-product [id]="item.value.id" (item)="addtocart($event)" [prod]="item"></app-product>
+    </div>
+  </div>
+  <div class="text-center w-100">
+    <app-spinner *ngIf="loadding"></app-spinner>
+  </div>
+</div>
+
+
+<!--
+  <select class="form-control">
+      <label for="" class="my-1">categories</label>
+      <option value="1" (click)="getall()">all</option>
+      <option value="1" (click)="getelec()">electronics</option>
+      <option value="2" (click)="getjewe()">jewelery</option>
+      <option value="3" (click)="getmnclo()">men`s clothing</option>
+      <option value="4" (click)="getwmclo()">women`s clothing</option>
+  </select>
+-->
